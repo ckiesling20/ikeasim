@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
 
-
 public class maingame {
 
     Scanner input = new Scanner(System.in);
@@ -11,56 +10,49 @@ public class maingame {
 
     private int totalHours = 0;
 
-    private String[] name = {
-            "bedroom",
-            "cafe",
-            "kitchen",
-            "living room",
-            "warehouse",
-            "bathroom",
-            "dining room"
-    };
-
-    private int[] foodHours = {
-            0,
-            12,
-            6,
-            0,
-            0,
-            0,
-            3
-    };
-
-    private int[] sleepHours = {
-            18,
-            2,
-            1,
-            9,
-            -2,
-            0,
-            1,
-    };
-
-    public class Room {
-        String roomType;
-        int foodThere;
-        int sleepPossible;
-    }
-
-    private Room[] roomArray = new Room[7];
-
-    for (int i = 0; i < roomArray.length; i++) {
-        roomArray[i] = new Room();
-        roomArray[i].roomType = name[i];
-        roomArray[i].foodThere = foodHours[i];
-        roomArray[i].sleepPossible = sleepHours[i];
-    }
-
     private Random rand = new Random();
 
-    public static void main (String[] args) {
 
+    public static void main(String[] args) {
+
+        String[] name = {
+                "bedroom",
+                "cafe",
+                "kitchen",
+                "living room",
+                "warehouse",
+                "bathroom",
+                "dining room"
+        };
+
+        int[] foodHours = {
+                0,
+                12,
+                6,
+                0,
+                0,
+                0,
+                3
+        };
+
+        int[] sleepHours = {
+                18,
+                2,
+                1,
+                9,
+                -2,
+                0,
+                1,
+        };
+
+        ikeaRoom[] rooms = new ikeaRoom[7];
+
+        for(int i = 0; i < rooms.length; i++){
+            rooms[i] = new ikeaRoom(foodHours[i], sleepHours[i], name[i]);
+
+        }
 
     }
 }
+
 
