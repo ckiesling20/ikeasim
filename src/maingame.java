@@ -5,12 +5,13 @@ public class maingame {
 
     Scanner input = new Scanner(System.in);
 
-    private int HoursUntilStarvation = 36;
-    private int HoursUntilExhaustation = 48;
+    public int HoursUntilStarvation = 36;
+    public int HoursUntilExhaustation = 48;
 
-    private int totalHours = 0;
+    public int totalHours = 0;
 
     private Random rand = new Random();
+    
 
 
     public static void main(String[] args) {
@@ -45,12 +46,23 @@ public class maingame {
                 1,
         };
 
+        String[] textBoxes = {
+               "bed",
+               "cafe",
+               "kitchen",
+                "living room",
+               "warehouse",
+               "bathroom",
+               "dining room"
+        };
+
         ikeaRoom[] rooms = new ikeaRoom[7];
 
         for(int i = 0; i < rooms.length; i++){
-            rooms[i] = new ikeaRoom(foodHours[i], sleepHours[i], name[i]);
-
+            rooms[i] = new ikeaRoom(foodHours[i], sleepHours[i], name[i], textBoxes[i]);
         }
+
+
 
     }
 }
