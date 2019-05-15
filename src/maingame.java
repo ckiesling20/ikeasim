@@ -3,18 +3,14 @@ import java.util.Random;
 
 public class maingame {
 
-    Scanner input = new Scanner(System.in);
-
-    public int HoursUntilStarvation = 36;
-    public int HoursUntilExhaustation = 48;
-
-    public int totalHours = 0;
-
-    private Random rand = new Random();
-    
-
-
     public static void main(String[] args) {
+
+        int HoursUntilStarvation = 36;
+        int HoursUntilExhaustation = 48;
+        int totalHours = 0;
+
+        Random rand = new Random();
+        int random;
 
         String[] name = {
                 "bedroom",
@@ -60,6 +56,31 @@ public class maingame {
 
         for(int i = 0; i < rooms.length; i++){
             rooms[i] = new ikeaRoom(foodHours[i], sleepHours[i], name[i], textBoxes[i]);
+        }
+
+        while(true) {
+            random = rand.nextInt(6);
+
+            System.out.println(rooms[random].text);
+            System.out.println("Would you like to sleep, eat or leave? Remember you can only perform one action, so pick wisely!");
+
+            Scanner input = new Scanner (System.in);
+            String choice = input.nextLine();
+
+            if (choice.equals("eat")){
+                //munchies
+                return;
+            }
+
+            if (choice.equals("sleeep")){
+                //slep
+                return;
+            }
+
+            if (choice.equals("leave")) {
+                return;
+            }
+
         }
 
 
